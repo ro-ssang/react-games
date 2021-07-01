@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8" />
+        <title>구구단</title>
         <script
             crossorigin
             src="https://unpkg.com/react@17/umd/react.development.js"
@@ -14,37 +16,41 @@
     <body>
         <div id="root"></div>
         <script type="text/babel">
-            class LikeButton extends React.Component {
+            class Gugudan extends React.Component {
                 constructor(props) {
                     super(props);
                     this.state = {
-                        liked: false,
+                        first: Math.ceil(Math.random() * 9),
+                        second: Math.ceil(Math.random() * 9),
+                        value: "",
+                        result: "",
                     };
                 }
 
                 render() {
                     return (
-                        <button
-                            type="submit"
-                            onClick={() => this.setState({ liked: true })}
-                        >
-                            {this.state.liked ? "Liked" : "Like"}
-                        </button> // JSX = JS + XML
+                        <div>
+                            <div>
+                                {this.state.first} 곱하기 {this.state.second}는?
+                            </div>
+                            <form>
+                                <input
+                                    type="number"
+                                    value={this.state.value}
+                                    onChange={(e) =>
+                                        this.setState({ value: e.target.value })
+                                    }
+                                />
+                                <button>제출</button>
+                            </form>
+                            <div>{this.state.result}</div>
+                        </div>
                     );
                 }
             }
         </script>
         <script type="text/babel">
-            ReactDOM.render(
-                <>
-                    <LikeButton />
-                    <LikeButton />
-                    <LikeButton />
-                    <LikeButton />
-                    <LikeButton />
-                </>,
-                document.getElementById("root")
-            );
+            ReactDOM.render(<Gugudan />, document.getElementById("root"));
         </script>
     </body>
 </html>
