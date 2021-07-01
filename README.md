@@ -6,3 +6,4 @@
 - [x] JSX와 바벨(babel)
 - [x] 구구단 리액트로 만들기
 - [x] 클래스 메서드
+- [x] React.Fragment
