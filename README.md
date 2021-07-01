@@ -8,3 +8,4 @@
 - [x] 클래스 메서드
 - [x] React.Fragment
 - [x] 함수형 setState
+- [x] ref

@@ -39,7 +39,7 @@
                             } = ${
                                 prevState.first * prevState.second
                             } 이므로 정답입니다.`,
-                        })); // setState 에서 this.state.value를 쓰면 setState인자로 함수를 넘겨준다.(setState((prevState) => {}))
+                        }));
                     } else {
                         this.setState((prevState) => ({
                             value: "",
@@ -50,9 +50,12 @@
                             } 이므로 땡입니다.`,
                         }));
                     }
+                    this.input.focus();
                 };
 
                 onChange = (e) => this.setState({ value: e.target.value });
+
+                onRefInput = (el) => (this.input = el);
 
                 render() {
                     return (
@@ -62,6 +65,7 @@
                             </div>
                             <form onSubmit={this.onSubmit}>
                                 <input
+                                    ref={this.onRefInput}
                                     type="number"
                                     value={this.state.value}
                                     onChange={this.onChange}
