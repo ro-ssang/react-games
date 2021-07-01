@@ -30,25 +30,25 @@
                         parseInt(this.state.value, 10) ===
                         this.state.first * this.state.second
                     ) {
-                        this.setState({
+                        this.setState((prevState) => ({
                             first: Math.ceil(Math.random() * 9),
                             second: Math.ceil(Math.random() * 9),
                             value: "",
-                            result: `${this.state.first} X ${
-                                this.state.second
+                            result: `${prevState.first} X ${
+                                prevState.second
                             } = ${
-                                this.state.first * this.state.second
+                                prevState.first * prevState.second
                             } 이므로 정답입니다.`,
-                        });
+                        })); // setState 에서 this.state.value를 쓰면 setState인자로 함수를 넘겨준다.(setState((prevState) => {}))
                     } else {
-                        this.setState({
+                        this.setState((prevState) => ({
                             value: "",
-                            result: `${this.state.first} x ${
-                                this.state.second
+                            result: `${prevState.first} x ${
+                                prevState.second
                             } = ${
-                                this.state.first * this.state.second
+                                prevState.first * prevState.second
                             } 이므로 땡입니다.`,
-                        });
+                        }));
                     }
                 };
 

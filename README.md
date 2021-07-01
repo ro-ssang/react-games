@@ -7,3 +7,4 @@
 - [x] 구구단 리액트로 만들기
 - [x] 클래스 메서드
 - [x] React.Fragment
+- [x] 함수형 setState
