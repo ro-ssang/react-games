@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
@@ -19,12 +20,22 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: ["@babel/preset-env", "@babel/preset-react"], // preset-env: 환경(브라우저)에 맞게 바꿔준다.
+                        presets: [
+                            [
+                                "@babel/preset-env",
+                                {
+                                    debug: true,
+                                },
+                            ],
+                            "@babel/preset-react",
+                        ], // preset-env: 환경(브라우저)에 맞게 바꿔준다.
                     },
                 },
             },
         ],
     },
+
+    plugins: [new webpack.LoaderOptionsPlugin({ debug: true })],
 
     output: {
         path: path.join(__dirname, "dist"),
