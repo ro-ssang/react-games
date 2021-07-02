@@ -5,7 +5,7 @@ const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin"
 module.exports = {
     name: "wordrelay-setting",
     mode: "development",
-    devtool: "eval",
+    devtool: "inline-source-map",
     resolve: {
         extensions: [".js", ".jsx"],
     },
@@ -26,6 +26,9 @@ module.exports = {
                                 "@babel/preset-env",
                                 {
                                     debug: true,
+                                    targets: {
+                                        browsers: ["> 1% in KR"],
+                                    },
                                 },
                             ],
                             "@babel/preset-react",
