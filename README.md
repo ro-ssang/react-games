@@ -18,3 +18,4 @@
 - [x] 구구단 웹팩으로 빌드하기
 - [x] @babel/preset-env와 plugins
 - [x] 끝말잇기 Class 만들기
+- [x] 웹팩 데브 서버와 핫 리로딩
