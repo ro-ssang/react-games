@@ -17,3 +17,4 @@
 - [x] 웹팩으로 빌드하기
 - [x] 구구단 웹팩으로 빌드하기
 - [x] @babel/preset-env와 plugins
+- [x] 끝말잇기 Class 만들기
