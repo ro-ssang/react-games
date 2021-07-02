@@ -1,4 +1,6 @@
 const React = reuire('react');
 const ReactDOM = require('react-dom');
 
-ReactDOM.render(<Gugudan />, document.getElementById('root'));
+const WordRelay = require('./WordRelay');
+
+ReactDOM.render(<WordRelay />, document.getElementById('root'));
