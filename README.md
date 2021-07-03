@@ -25,3 +25,4 @@
 - [x] import와 require 비교
 - [x] 리액트 반복문(map)
 - [x] 리액트 반복문(key)
+- [x] 컴포넌트 분리와 props
