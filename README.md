@@ -23,3 +23,4 @@
 
 ## 3장
 - [x] import와 require 비교
+- [x] 리액트 반복문(map)
