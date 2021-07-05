@@ -37,3 +37,4 @@
 - [x] React 조건문
 - [x] setTimeout 넣어 반응속도체크
 - [x] 리셋 버튼
+- [x] 반응속도체크 Hooks로 전환하기
