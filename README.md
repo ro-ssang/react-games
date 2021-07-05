@@ -35,3 +35,4 @@
 
 ## 4장
 - [x] React 조건문
+- [x] setTimeout 넣어 반응속도체크
