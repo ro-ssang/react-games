@@ -28,3 +28,4 @@
 - [x] 컴포넌트 분리와 props
 - [x] 숫자야구 만들기
 - [x] 숫자야구 Hooks로 전환하기
+- [x] shouldComponentUpdate
