@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 import Try from './TryClass';
 
@@ -26,6 +26,7 @@ class NumberBaseball extends Component {
             this.setState({ result: "홈런!", tries: [...this.state.tries, { try: this.state.value, result: "홈런!" }] });
             alert("게임을 다시 시작합니다!");
             this.setState({ value: "", answer: getNumbers(), tries: [] });
+            this.inputRef.current.focus();
         } else {
             const answerArray = this.state.value.split("").map((v) => parseInt(v));
             let strike = 0;
@@ -34,6 +35,7 @@ class NumberBaseball extends Component {
                 this.setState({ result: `10번 넘게 틀려서 실패! 답은 ${this.state.answer.join(", ")}였습니다!` });
                 alert("게임을 다시 시작합니다!");
                 this.setState({ value: "", answer: getNumbers(), tries: [] });
+                this.inputRef.current.focus();
             } else {    
                 for (let i = 0; i < 4; i++) {
                     if (answerArray[i] === this.state.answer[i]) {
@@ -43,6 +45,7 @@ class NumberBaseball extends Component {
                     }
                 }
                 this.setState({ value: "", tries: [...this.state.tries, { try: this.state.value, result: `${strike} 스트라이크, ${ball} 볼` }] });
+                this.inputRef.current.focus();
             }
         }
     }
@@ -51,12 +54,14 @@ class NumberBaseball extends Component {
         this.setState({ value: e.target.value });
     }
 
+    inputRef = createRef();
+
     render() {
         return (
             <>
                 <h1>{this.state.result}</h1>
                 <form onSubmit={this.onSubmitForm}>
-                    <input type="text" maxLength="4" value={this.state.value} onChange={this.onChangeInput} />
+                    <input ref={this.inputRef} type="text" maxLength="4" value={this.state.value} onChange={this.onChangeInput} />
                 </form>
                 <div>시도: {this.state.tries.length}</div>
                 <ul>

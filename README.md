@@ -30,3 +30,4 @@
 - [x] 숫자야구 Hooks로 전환하기
 - [x] shouldComponentUpdate
 - [x] PureComponent와 React.memo
+- [x] React.createRef

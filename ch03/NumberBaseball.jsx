@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import Try from "./Try";
 
@@ -17,6 +17,7 @@ const NumberBaseball = () => {
     const [value, setValue] = useState("");
     const [answer, setAnswer] = useState(getNumbers());
     const [tries, setTries] = useState([]);
+    const inputRef = useRef(null);
 
     const onSubmitForm = (e) => {
         e.preventDefault();
@@ -29,6 +30,7 @@ const NumberBaseball = () => {
             setValue("");
             setAnswer(getNumbers());
             setTries([]);
+            inputRef.current.focus();
         } else {
             const answerArray = value.split("").map((v) => parseInt(v, 10));
             let strike = 0;
@@ -39,6 +41,7 @@ const NumberBaseball = () => {
                 setValue("");
                 setAnswer(getNumbers());
                 setTries([]);
+                inputRef.current.focus();
             } else {
                 for (let i = 0; i < 4; i += 1) {
                     if (answerArray[i] === answer[i]) {
@@ -51,6 +54,7 @@ const NumberBaseball = () => {
                 setTries((prevTries) => {
                     return [...prevTries, { try: value, result: `${strike} 스트라이크, ${ball} 볼` }]
                 });
+                inputRef.current.focus();
             }            
         }
     };
@@ -63,7 +67,7 @@ const NumberBaseball = () => {
         <>
             <h1>{result}</h1>
             <form onSubmit={onSubmitForm}>
-                <input type="text" maxLength="4" value={value} onChange={onChangeInput} />
+                <input ref={inputRef} type="text" maxLength="4" value={value} onChange={onChangeInput} />
                 <button type="submit">입력</button>
             </form>
             <h3>시도: {tries.length} / 10</h3>
@@ -76,4 +80,52 @@ const NumberBaseball = () => {
     );
 };
 
-export default NumberBaseball
+export default NumberBaseball;
+
+/*
+  React에서 엘리먼트를 참조하고 싶을 때,
+    1. class component
+      1) class Component extends React.Component {
+           onChange = (e) => {
+               this.inputRef.focus();
+           };
+
+           inputRef;
+       
+           onInputRef = (c) => { this.inputRef = c };
+       
+           render() {
+             return (
+                 <input ref={this.onInputRef} />
+             );
+           }
+         }
+         => 함수를 직접 만들기 때문에, 다른 것을 할 수 있다. (ex. console.log(c); ...)
+
+      2) class Component extends React.Component {
+           onChange = (e) => {
+             this.inputRef.current.focus();
+           };
+
+           inputRef = React.createRef();
+       
+           render() {
+             return (
+                 <input ref={this.inputRef} />
+             );
+           }
+         }
+         => Hooks 에서 사용하는 것과 똑같이  inputRef.current 에 엘리먼트가 있다.
+    2. Hooks component
+      const Component = () => {
+          const inputRef = React.useRef(null);
+
+          const onChange = () => {
+            inputRef.current.focus();
+          };
+
+          return (
+            <input ref={inputRef} />
+          );
+      };
+*/
