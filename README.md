@@ -32,3 +32,6 @@
 - [x] PureComponent와 React.memo
 - [x] React.createRef
 - [x] props와 state 연결하기
+
+## 4장
+- [x] React 조건문
