@@ -56,7 +56,19 @@ const ResponseCheck = () => {
             >
                 {message}
             </div>
-            {renderAverage()}
+            {(() => {
+                if (result.length === 0) {
+                    return null;
+                } else {
+                    return (
+                        <>
+                            <div>평균시간: {result.reduce((a, c) => a + c) / result.length}ms</div>
+                            <button onClick={onReset}>리셋</button>
+                        </>
+                    );
+                }
+            })()}
+            {/* {renderAverage()} */}
         </>
     );
 };
