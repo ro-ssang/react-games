@@ -12,3 +12,17 @@ class Try extends PureComponent {
 }
 
 export default Try;
+
+/*
+자식 컴포넌트에서 props를 바꿔야 하는 경우:
+1. class Component
+  class Child extends React.Component {
+      state = {
+          value: this.props.value,
+      };
+  }
+2. Hooks Component
+  const Child = (props) => {
+      const [value, setValue] = React.useState(props.value);
+  };
+*/

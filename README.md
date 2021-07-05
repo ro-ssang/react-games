@@ -31,3 +31,4 @@
 - [x] shouldComponentUpdate
 - [x] PureComponent와 React.memo
 - [x] React.createRef
+- [x] props와 state 연결하기
