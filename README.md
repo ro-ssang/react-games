@@ -45,3 +45,4 @@
 - [x] setInterval과 라이프사이클 연동하기
 - [x] 가위바위보 게임 만들기
 - [x] 고차 함수
+- [x] Hooks와 useEffect
