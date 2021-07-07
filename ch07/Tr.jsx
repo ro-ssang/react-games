@@ -2,10 +2,10 @@ import React from "react";
 
 import Td from "./Td";
 
-const Tr = () => {
+const Tr = ({ rowData }) => {
     return (
         <tr>
-            <Td />
+            {rowData.map((td, i) => <Td key={i} />)}
         </tr>
     );
 };
