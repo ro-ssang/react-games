@@ -57,3 +57,4 @@
 ## 7장
 - [x] 틱택토와 useReducer 소개
 - [x] reducer, action, dispatch의 관계
+- [x] action 만들어 dispatch 하기
