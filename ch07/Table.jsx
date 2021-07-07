@@ -2,9 +2,9 @@ import React from "react";
 
 import Tr from "./Tr";
 
-const Table = ({ onClick, tableData, dispatch }) => {
+const Table = ({ tableData, dispatch }) => {
     return (
-        <table onClick={onClick}>
+        <table>
             <tbody>
                 {tableData.map((tr, i) => 
                     <Tr
@@ -19,4 +19,4 @@ const Table = ({ onClick, tableData, dispatch }) => {
     );
 };
 
-export default Table;
+export default React.memo(Table);

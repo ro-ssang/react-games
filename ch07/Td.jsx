@@ -14,4 +14,4 @@ const Td = ({ rowIndex, cellIndex, cellData, dispatch }) => {
     );
 };
 
-export default Td;
+export default React.memo(Td);

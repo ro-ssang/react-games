@@ -18,4 +18,4 @@ const Tr = ({ rowData, rowIndex, dispatch }) => {
     );
 };
 
-export default Tr;
+export default React.memo(Tr);
