@@ -53,3 +53,6 @@
 - [x] componentDidUpdate
 - [x] useEffect로 업데이트 감지하기
 - [x] useMemo와 useCallback
+
+## 7장
+- [x] 틱택토와 useReducer 소개
