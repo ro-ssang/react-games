@@ -52,3 +52,4 @@
 - [x] setTimeout 여러 번 사용하기
 - [x] componentDidUpdate
 - [x] useEffect로 업데이트 감지하기
+- [x] useMemo와 useCallback
