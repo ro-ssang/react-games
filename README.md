@@ -63,3 +63,4 @@
 
 ## 8장
 - [x] Context API 소개와 지뢰찾기
+- [x] createContext와 Provider
