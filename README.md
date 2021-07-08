@@ -60,3 +60,6 @@
 - [x] action 만들어 dispatch 하기
 - [x] 틱택토 구현하기
 - [x] 테이블 최적화하기
+
+## 8장
+- [x] Context API 소개와 지뢰찾기
