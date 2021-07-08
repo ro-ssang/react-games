@@ -19,6 +19,32 @@ export const TableContext = createContext({
     dispatch: () => {},
 });
 
+const plantMine = (row, cell, mine) => {
+    const candidate = Array(row * cell).fill().map((v, i) => i);
+    const shuffle = [];
+    while (candidate.length > row * cell - mine) {
+        const chosen = candidate.splice(Math.floor(Math.random() * (candidate.length)), 1)[0];
+        shuffle.push(chosen);
+    }
+    
+    const data = [];
+    for (let i = 0; i < row; i++) {
+        const rowData = [];
+        data.push(rowData);
+        for (let j = 0; j < cell; j++) {
+            rowData.push(CODE.NORMAL);
+        }
+    }
+    
+    for (let k = 0; k < shuffle.length; k++) {
+        const ver = Math.floor(shuffle[k] / cell);
+        const hor = shuffle[k] % cell;
+        data[ver][hor] = CODE.MINE;
+    }
+
+    return data;
+};
+
 const initialState = {
     tableData: [],
     timer: 0,
