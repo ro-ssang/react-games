@@ -65,3 +65,4 @@
 - [x] Context API 소개와 지뢰찾기
 - [x] createContext와 Provider
 - [x] useContext 사용해 지뢰 칸 렌더링
+- [x] 왼쪽 오른쪽 클릭 로직 작성하기
