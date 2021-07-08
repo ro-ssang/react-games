@@ -66,3 +66,4 @@
 - [x] createContext와 Provider
 - [x] useContext 사용해 지뢰 칸 렌더링
 - [x] 왼쪽 오른쪽 클릭 로직 작성하기
+- [x] 지뢰 개수 표시하기
